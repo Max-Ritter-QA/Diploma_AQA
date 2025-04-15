@@ -15,6 +15,7 @@
 - _sqlalchemy_
 - allure
 - config
+- DevTools
 
 ### Струткура:  
 - ./test - тесты
