@@ -1,9 +1,9 @@
 import allure
-import pytest
 from page.page_ui import Aviasales
 
 departure = "Москва"
 arrival = "Новосибирск"
+
 
 def test_sortie(browser):
     page = Aviasales(browser)
@@ -14,6 +14,7 @@ def test_sortie(browser):
         with allure.step("Поле откуда должно быть " + departure):
             assert result == departure
 
+
 def test_arrival_by_air(browser):
     page = Aviasales(browser)
     page.go()
@@ -21,7 +22,8 @@ def test_arrival_by_air(browser):
 
     with allure.step("Проверить, что указаны данные прилета"):
         with allure.step("Поле куда должно быть " + arrival):
-             assert result == arrival
+            assert result == arrival
+
 
 def test_celebrate_there(browser):
     page = Aviasales(browser)
@@ -30,7 +32,7 @@ def test_celebrate_there(browser):
 
     with allure.step("Проверить, что указана дата вылета"):
         with allure.step("Дата вылета должна быть 29 апреля, вт"):
-             assert result == "29 апреля, вт"
+            assert result == "29 апреля, вт"
 
 
 def test_celebrate_back(browser):
@@ -41,7 +43,6 @@ def test_celebrate_back(browser):
     with allure.step("Проверить, что указана дата прилета"):
         with allure.step("Дата прилета должна быть 30 апреля, ср"):
             assert result == "30 апреля, ср"
-
 
 
 def test_servise(browser):
